@@ -1,5 +1,1 @@
-gh workflow run build.yml
-sleep 10
-ID=$(gh run list --workflow build.yml --limit 1 --json databaseId -q '.[0].databaseId')
-gh run watch $ID --exit-status
-gh run download $ID -n jarvis1-apk
+gh run view $ID --log-failed | tail -40
